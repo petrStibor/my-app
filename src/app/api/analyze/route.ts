@@ -9,7 +9,7 @@ export async function POST(request: Request) {
             'Content-Type': 'application/x-www-form-urlencoded',
         };
 
-        const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+        const apiKey = process.env.NEXT_PUBLIC_API_KEY || 'b25664043de19a8e9aa7d6b962f9d17db78384d4c109d033b6cd62aa';
 
         if (apiKey) {
             headers['x-textrazor-key'] = apiKey;
