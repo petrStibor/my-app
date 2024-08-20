@@ -1,3 +1,4 @@
+'use client'
 import { Container, Col, Nav } from 'react-bootstrap'
 import Image from 'next/image'
 import logo from '../../../../public/assets/companyLogos/logo.png'
@@ -102,7 +103,6 @@ const DashboardMenu: React.FC = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          marginBottom: '20px',
         }}
       >
         <BbDialog icon={<BsUpload />}>

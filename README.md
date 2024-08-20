@@ -1,3 +1,3 @@
-Upload some txt data and watch for magic.
+Upload some txt data using dropzone.
 
-Also generate your own API key here: https://www.textrazor.com/login
+Generate your own API key here: https://www.textrazor.com/login

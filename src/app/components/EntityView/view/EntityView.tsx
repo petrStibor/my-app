@@ -70,8 +70,8 @@ const EntityList: React.FC<EntityListProps> = ({ entities, isLoading }) => {
 
   return (
     <div style={{ padding: 20 }}>
-      {isLoading ? (
-        <BbLoader isLoading={isLoading} variant='primary' />
+      {isLoading && !entities.length ? (
+        <BbLoader isLoading={true} />
       ) : entities.length > 0 ? (
         <div className='table-responsive'>
           <table
@@ -79,7 +79,15 @@ const EntityList: React.FC<EntityListProps> = ({ entities, isLoading }) => {
             className='table table-striped table-bordered'
             style={{ width: '100%' }}
           >
-            <thead>
+            <thead
+              style={{
+                position: 'sticky',
+                top: 0,
+                backgroundColor: 'white',
+                zIndex: 10,
+                borderBottom: '2px solid #ddd',
+              }}
+            >
               {headerGroups.map((headerGroup) => (
                 <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
                   {headerGroup.headers.map((column) => (
@@ -105,7 +113,7 @@ const EntityList: React.FC<EntityListProps> = ({ entities, isLoading }) => {
                           style={{
                             textAlign: 'center',
                             verticalAlign: 'middle',
-                          }} // Centers content horizontally and vertically
+                          }}
                         >
                           <div
                             style={{

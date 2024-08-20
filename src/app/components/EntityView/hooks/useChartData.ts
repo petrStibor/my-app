@@ -1,6 +1,5 @@
-// hooks/useChartData.ts
 import { useMemo } from 'react'
-import { Entity } from '../types' // Ensure this import points to where your Entity type is defined
+import { Entity } from '../types'
 
 type ChartData = {
     textCount: { name: string; value: number }[]

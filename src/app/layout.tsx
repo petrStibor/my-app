@@ -1,8 +1,12 @@
-'use client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import DashboardMenu from './BuildingBlocks/layout/DashboardMenu'
 import { EntityProvider } from './context/EntityContext'
+
+export const metadata = {
+  title: 'Text Cruncher 3000',
+  description: 'Drop and go app',
+}
 
 export default function RootLayout({
   children,
@@ -17,8 +21,12 @@ export default function RootLayout({
             <Row style={{ height: '100%' }}>
               <Col
                 md={2}
-                className='bg-dark text-white'
-                style={{ position: 'fixed', height: '100%', overflowY: 'auto' }}
+                style={{
+                  position: 'fixed',
+                  height: '100%',
+                  overflowY: 'auto',
+                  backgroundColor: '#212529',
+                }}
               >
                 <DashboardMenu />
               </Col>
@@ -30,9 +38,7 @@ export default function RootLayout({
                   overflowY: 'auto',
                 }}
               >
-                <div className='p-3' style={{ height: '100%' }}>
-                  {children}
-                </div>
+                <div style={{ height: '100%' }}>{children}</div>
               </Col>
             </Row>
           </Container>
